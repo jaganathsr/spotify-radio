@@ -82,7 +82,7 @@ class MyDaemon(daemon):
                header = {'Content-Type': 'application/json'}			
                my_data = json.dumps(data);
                binary_data = my_data.encode("utf-8")
-               req = urllib2.Request('http://192.168.1.161:6680/mopidy/rpc',binary_data,header)
+               req = urllib2.Request('http://127.0.0.1:6680/mopidy/rpc',binary_data,header)
 	       response = urllib2.urlopen(req)
                song_info = json.loads(response.read().decode('utf8'))
                print song_info['result']
