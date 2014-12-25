@@ -9,7 +9,7 @@ import urllib2
 
 from daemon import *
 
-installPath = "/opt/PiTFTWeather/"
+installPath = "/opt/spotify-radio/radioui/"
 
 
 # font colours
@@ -29,7 +29,6 @@ class pitft :
     def __init__(self):
         "Ininitializes a new pygame screen using the framebuffer"
         # Based on "Python GUI in Linux frame buffer"
-        # http://www.karoltomala.com/blog/?p=679
         disp_no = os.getenv("DISPLAY")
         if disp_no:
             print "I'm running under X display = {0}".format(disp_no)
@@ -138,7 +137,7 @@ class MyDaemon(daemon):
                time.sleep(updateRate)
         
 if __name__ == "__main__":
-    daemon = MyDaemon('/tmp/PiTFTWeather.pid', stdout='/tmp/PiTFTWeather.log', stderr='/tmp/PiTFTWeatherErr.log')
+    daemon = MyDaemon('/tmp/pispotifyradio.pid', stdout='/tmp/pispotifyradio.log', stderr='/tmp/pispotifyradio_err.log')
     if len(sys.argv) == 2:
         if 'start' == sys.argv[1]:
             syslog.syslog(syslog.LOG_INFO, "Starting")
