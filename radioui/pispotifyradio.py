@@ -65,7 +65,7 @@ pygame.mouse.set_visible(False)
 
 # set up the fonts
 # choose the font
-fontpath = pygame.font.match_font('dejavusansmono')
+fontpath = pygame.font.match_font('droidsans')
 # set up 2 sizes
 font = pygame.font.Font(fontpath, 20)
 fontSm = pygame.font.Font(fontpath, 18)
@@ -113,8 +113,8 @@ class MyDaemon(daemon):
 		       # set X axis text anchor for the forecast text
 		       textAnchorX = 10
 		       textXoffset = 65
-		       textYoffset = 20
-		       textAnchorY = 130
+		       textYoffset = 22
+		       textAnchorY = 140
 
 		       text_surface = fontSm.render(song_track, True, colourRed)
 		       mytft.screen.blit(text_surface, (textAnchorX, textAnchorY))
